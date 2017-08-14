@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config ./webpack.config.dev.js",
+    "prod": "webpack --config ./webpack.config.prod.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.0.2",
+    "@types/react-dom": "^15.5.2",
+    "awesome-typescript-loader": "^3.2.3",
+    "babel-polyfill": "^6.23.0",
+    "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.4",
+    "webpack-merge": "^4.1.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
 }

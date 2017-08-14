@@ -17,7 +17,8 @@ namespace LunchRecommendations
 
             string[] names = new string[] { "OIE Truly Thai", "Farmer J's", "Market Green", "Petticoat lane market", "Tiffinbox", "K10", "Tortilla", "Poncho", "Hummus Bro's", "Japanese Canteen", "Earls", "Assenheim's 56", "Bibimbap", "Banh mi" };
             string place = names[new Random().Next(names.Length)];
-            return req.CreateResponse(HttpStatusCode.OK, place, JsonMediaTypeFormatter.DefaultMediaType);
+            string result = $"{{place: {place}}}";
+            return req.CreateResponse(HttpStatusCode.OK, result, JsonMediaTypeFormatter.DefaultMediaType);
         }
     }
 }
