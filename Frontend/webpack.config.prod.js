@@ -5,7 +5,7 @@ const CommonConfig = require('./webpack.common.js');
 
 module.exports = Merge(CommonConfig, {
 	devtool: "source-map",
-	watch: true,
+	watch: false,
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': '"production"' // Reduces 78 kb in React

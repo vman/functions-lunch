@@ -1,6 +1,7 @@
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -17,8 +18,9 @@ namespace LunchRecommendations
 
             string[] names = new string[] { "OIE Truly Thai", "Farmer J's", "Market Green", "Petticoat lane market", "Tiffinbox", "K10", "Tortilla", "Poncho", "Hummus Bro's", "Japanese Canteen", "Earls", "Assenheim's 56", "Bibimbap", "Banh mi" };
             string place = names[new Random().Next(names.Length)];
-            string result = $"{{place: {place}}}";
-            return req.CreateResponse(HttpStatusCode.OK, result, JsonMediaTypeFormatter.DefaultMediaType);
+            var placeInfo = new PlaceInfo();
+            placeInfo.Name = place;
+            return req.CreateResponse(HttpStatusCode.OK, placeInfo, JsonMediaTypeFormatter.DefaultMediaType);
         }
     }
 }
